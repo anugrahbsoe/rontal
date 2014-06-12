@@ -2,6 +2,8 @@ from django.contrib import admin
 
 
 class RontalAdmin(admin.ModelAdmin):
+	"""Admin dengan fasilitas soft delete"""
+	
 	actions = ['soft_delete']
 
 	def soft_delete(self, request, queryset):
