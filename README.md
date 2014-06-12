@@ -51,6 +51,9 @@ pastikan versi python anda 2.7
         $ cd ~/projects
         $ virtualenv rontal
         $ cd rontal
+
+* Masuk ke virtualenv
+
         $ source bin/activate
 
 Jika Anda berhasil masuk ke virtualenv, tampilan diterminal akan seperti ini:
