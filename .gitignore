@@ -1,2 +1,3 @@
 rontal/settings.py
 rontal/db/*
+*.pyc
