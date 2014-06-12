@@ -30,10 +30,15 @@ Rontal dibangun menggunakan:
 
 Instalasi
 ======
-* Install virtualenv 
+
 * Cek versi python Anda lewat terminal:
 
         $ python -V
+
+pastikan versi python anda 2.7 
+
+* Install virtualenv 
+
         $ sudo apt-get install python-pip python-virtualenv python-dev
         
 * Jika Anda ingin menggunakan MySQL, install library yang diperlukan
