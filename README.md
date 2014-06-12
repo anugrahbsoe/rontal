@@ -97,3 +97,9 @@ Edit file setting.py sesuai dengan kebutuhan.
         (rontal)$ ./manage.py runserver
         
 * Buka http://127.0.0.1:8000/admin  dari browser
+
+
+Tambahan
+======
+
+Untuk pemula yang tertarik dengan Django, bisa mendownload dokumentasinya : https://docs.djangoproject.com/m/docs/django-docs-1.4-en.zip  extract lalu buka file index.html yang ada di dalamnya.
