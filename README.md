@@ -15,7 +15,7 @@ Fitur Utama
 
 Fitur utama yang akan ditambahkan ke dalam Rontal:
 * Manajemen dokumen, arsip, dan URL bookmark yang digunakan dalam penulisan Landasan Teori dan Daftar Pustaka.
-* Drfat dokumen Tugas Akhir/Skripsi.
+* Draft dokumen Tugas Akhir/Skripsi.
 * Bimbingan jarak jauh (online).
 
 

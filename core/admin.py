@@ -1,5 +1,5 @@
 from django.contrib import admin
-
+from django.contrib import messages
 
 class RontalAdmin(admin.ModelAdmin):
     """Admin dengan fasilitas soft delete"""

@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils import timezone
 
@@ -17,7 +18,7 @@ class RontalModel(models.Model):
         if self.pk is None:
             self.created_at = timezone.now()
         elif self.deleted_at is not None:
-            return None
+            raise ValidationError("Gagal menyimpan %s" % self)
             
         self.updated_at = timezone.now()
         return super(RontalModel, self).save(*args, **kwargs)
@@ -25,9 +26,8 @@ class RontalModel(models.Model):
     
     def delete(self):
         if self.is_protected or self.deleted_at is not None:
-            return None
+            raise ValidationError("Gagal menghapus %s" % self)
         else:
             self.deleted_at = timezone.now()    
         
-        self.save()    
-        return 1
+        return super(RontalModel, self).save()
