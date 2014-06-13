@@ -133,6 +133,7 @@ INSTALLED_APPS = (
     'userauth',
     'library',
     'notebook',
+    'todo',
 )
 
 # A sample logging configuration. The only tangible logging
