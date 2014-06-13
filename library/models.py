@@ -25,12 +25,6 @@ class Bookmark(RontalModel):
     def __unicode__(self):
         return self.title
 
-    def save(self, *args, **kwargs):
-        if self.pk is None:
-            self.access_date = timezone.now()
-
-        return super(Bookmark, self).save(*args, **kwargs)
-
 
 class ArchieveMimeType(RontalModel):
     """
@@ -58,31 +52,32 @@ class Archieve(RontalModel):
 
     def __unicode__(self):
         return self.title
-    
+
     def save(self, *args, **kwargs):
         self.check_mime_type()
         return super(Archieve, self).save(*args, **kwargs)
-    
+
     def check_mime_type(self):
         try:
             uri = self.archieved_file.path
         except:
             uri = self.archieved_file.url
-        
+
         (ufile_mime_type, ufile_encoding) = mimetypes.guess_type(uri)
-        
+
         try:
-            file_type = ArchieveMimeType.objects.get(mime_type=ufile_mime_type)
+            file_type = ArchieveMimeType.objects.get(
+                            mime_type=ufile_mime_type)
         except:
             raise ValidationError("Tipe file %s tidak valid" % self.mime_type)
-        
+
         if self.pk is not None:
             arc = Archieve.objects.get(pk=self.pk)
-            
+
             if arc.archieved_file != self.archieved_file:
                 self.backup_file(arc.archieved_file)
-    
+
     def backup_file(self, file_path):
         return shutil.move(
-            os.path.dirname("%s/%s" % (settings.MEDIA_ROOT, file_path)), 
+            os.path.dirname("%s/%s" % (settings.MEDIA_ROOT, file_path)),
             settings.MEDIA_TRASH)

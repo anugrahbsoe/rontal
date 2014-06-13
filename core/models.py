@@ -19,15 +19,14 @@ class RontalModel(models.Model):
             self.created_at = timezone.now()
         elif self.deleted_at is not None:
             raise ValidationError("Gagal menyimpan %s" % self)
-            
+
         self.updated_at = timezone.now()
         return super(RontalModel, self).save(*args, **kwargs)
-        
-    
+
     def delete(self):
         if self.is_protected or self.deleted_at is not None:
             raise ValidationError("Gagal menghapus %s" % self)
         else:
-            self.deleted_at = timezone.now()    
-        
+            self.deleted_at = timezone.now()
+
         return super(RontalModel, self).save()
