@@ -91,7 +91,14 @@ Untuk selanjutnya, operasi di lingkungan virtual env akan ditulis sebagai beriku
         (rontal)$ cd ~/projects/rontal/
         (rontal)$ git clone https://github.com/aanlinuxer/rontal.git
         (rontal)$ cd ~/projects/rontal/rontal/rontal
+
+* Jika ingin men-setting ke database selain SQLITE3
+
         (rontal)$ mv default-setting.py setting.py
+
+* Jika inging menggukanan database SQLITE3
+
+        (rontal)$ mv example-settings.py setting.py
 
 Edit file setting.py sesuai dengan kebutuhan.
 
